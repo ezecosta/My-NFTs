@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract MyNFT is ERC721URIStorage {
+contract MyNFTs is ERC721URIStorage {
     uint private _tokenIds;
     address payable owner;
     uint price;
@@ -21,7 +21,7 @@ contract MyNFT is ERC721URIStorage {
         price = _price;
     }
 
-    //permite asignarle ese nft a otro usuario dentro de la blockchain
+    //enable the nft to be assigned to other user within the blockchain
     //we're using the onlyOwner modifier for this, could be removed
     function mintNFT(address recipient, string memory tokenURI) public onlyOwner payable returns (uint256)
     {
